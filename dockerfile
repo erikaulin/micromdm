@@ -1,4 +1,5 @@
 FROM alpine:3.7
+LABEL maintainer="erik@aulin.co"
 
 ENV MICROMDM_VERSION=v1.3.1
 
