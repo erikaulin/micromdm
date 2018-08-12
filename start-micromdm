@@ -1,4 +1,9 @@
 #!/bin/sh
 
-env
-exec micromdm serve -api-key ${MICROMDM_API_KEY} -server-url ${MICROMDM_SERVER_URL} -tls-cert ${MICROMDM_TLS_CERT} -tls-key ${MICROMDM_TLS_KEY} tls true -filerepo ${MICROMDM_PKG_REPO}
+exec micromdm serve -api-key ${MICROMDM_API_KEY} \
+     -server-url ${MICROMDM_SERVER_URL} \
+     -http-addr :8443 \
+     -tls \
+     -tls-cert ${MICROMDM_TLS_CERT} \
+     -tls-key ${MICROMDM_TLS_KEY} \
+     -filerepo ${MICROMDM_PKG_REPO}
