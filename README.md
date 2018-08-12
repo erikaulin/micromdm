@@ -10,3 +10,23 @@ DNSNAME=mdm.example.org;  (cat /etc/ssl/openssl.cnf ; printf "\n[SAN]\nsubjectAl
 ```
 
 ### Step 2
+
+Setup mdmctl on you local dev station
+
+Configure server settings
+```
+./mdmctl config set -api-token secret -name mdmexample -server-url https://mdm.example.org:6443 -skip-verify
+```
+Select config
+```
+./mdmctl config switch -name mdmexample
+```
+Check that it works
+```
+./mdmctl get devices
+```
+
+Upload push cert (example)
+```
+./mdmctl mdmcert upload -password secret -cert /tmp/MDM_\ McMurtrie\ Consulting\ LLC_Certificate.pem  -private-key /tmp/mdmcert.download.push.key
+```

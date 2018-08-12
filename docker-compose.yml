@@ -1,0 +1,10 @@
+version: '2'
+services:
+  mdm:
+    image: erikaulin/micromdm:latest
+    volumes:
+      - ./certs:/opt/micromdm/certs
+      - ./pkgrepo:/opt/micromdm/pkgrepo
+    ports:
+      - "6443:443"
+    env_file: .env
