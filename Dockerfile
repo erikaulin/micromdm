@@ -17,7 +17,7 @@ ENV PATH /opt/micromdm/bin:$PATH
 
 RUN mkdir -p /opt/micromdm/bin && \
     cd /opt/micromdm && \
-    wget -O- -O micromdm.zip https://github.com/micromdm/micromdm/releases/download/${MICROMDM_VERSION}/micromdm_${MICROMDM_VERSION}.zip && \
+    wget -qO micromdm.zip https://github.com/micromdm/micromdm/releases/download/${MICROMDM_VERSION}/micromdm_${MICROMDM_VERSION}.zip && \
     unzip micromdm.zip && rm micromdm.zip && mv build/linux/* bin/ && rm -rf build
 
 USER nobody
