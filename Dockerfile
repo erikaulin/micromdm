@@ -5,6 +5,8 @@ EXPOSE 8443
 COPY start-micromdm /usr/local/bin/
 CMD [ "start-micromdm" ]
 
+RUN apk --update add ca-certificates
+
 RUN mkdir -p /var/db/micromdm && \
     chown -R nobody:nobody /var/db/micromdm
 
